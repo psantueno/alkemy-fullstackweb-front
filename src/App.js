@@ -1,7 +1,12 @@
+import 'normalize.css';
+import './assets/css/App.css';
+import Home from "./components/pages/Home"
+
+
 function App() {
   return (
     <div className="App">
-        HELLO WORLD
+        <Home />
     </div>
   );
 }
