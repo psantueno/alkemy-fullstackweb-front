@@ -37,7 +37,8 @@ body {
 }
 
 .box-table {
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 
 .title-button {
@@ -52,7 +53,7 @@ body {
     border-collapse: separate;
     text-align: center;
     vertical-align: baseline;
-    font-size: 1em;
+    font-size: 0.6em;
 }
 
 tbody,
@@ -100,4 +101,70 @@ button.btn-add :not(:disabled) {
     background: none;
     color: #c3939b;
     text-decoration: none;
+}
+
+.page-register {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.title-register {
+    display: flex;
+    flex: 100%;
+    justify-content: center;
+}
+
+.box-btn-save, .box-btn-back {
+    display: flex;
+    justify-content: center;
+}
+
+.box-btn-save{
+    margin-top: 25px;
+}
+
+.btns-register {
+    background-color: #ffffff;
+    color: #c3939b;
+    border: 2px solid #c3939b;
+    border-radius: 5px;
+    padding: 10px;
+    transition: all 600ms;
+}
+
+.btns-register:hover {
+    background-color: #c3939b;
+    color: #ffffff;
+}
+
+/***********************************/
+
+.form-floating {
+    display: block;
+}
+
+
+/*************** START MEDIA QUERY ***************/
+
+
+@media screen and (min-width:375px) {
+
+    .table-striped {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (min-width:420px) {
+
+    .table-striped {
+        font-size: 0.85em;
+    }
+}
+
+@media screen and (min-width:520px) {
+
+    .table-striped {
+        font-size: 1em;
+    }
 }
