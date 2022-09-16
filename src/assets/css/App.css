@@ -2,7 +2,7 @@ body {
     color: #c3939b;
 }
 
-.page-home {
+.container-sections-home {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,13 +103,15 @@ button.btn-add :not(:disabled) {
     text-decoration: none;
 }
 
-.page-register {
+/* PAGE RECORDS */
+
+.container-sections-records {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.title-register {
+.title-records, .title-register {
     display: flex;
     flex: 100%;
     justify-content: center;
@@ -124,7 +126,7 @@ button.btn-add :not(:disabled) {
     margin-top: 25px;
 }
 
-.btns-register {
+.btns-general {
     background-color: #ffffff;
     color: #c3939b;
     border: 2px solid #c3939b;
@@ -133,16 +135,71 @@ button.btn-add :not(:disabled) {
     transition: all 600ms;
 }
 
-.btns-register:hover {
+.btns-general:hover {
     background-color: #c3939b;
     color: #ffffff;
 }
 
-/***********************************/
-
 .form-floating {
     display: block;
 }
+
+/* HEADER */
+
+.box-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 5px;
+}
+
+.navbar-brand {
+    color:#746F6F;
+    margin: 0;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    transition: color 600ms;
+}
+
+.navbar-brand:hover {
+    color:#c3939b;
+}
+
+/* PAGE LOGIN */
+
+.title-login {
+    display: flex;
+    flex: 100%;
+    justify-content: center;
+}
+
+.subtitle-login, .subtitle-register {
+    color:#746F6F;
+    margin-bottom: 10px;
+}
+
+.text-link-register {
+    color:#746F6F;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.link-register {
+    text-decoration: none;
+    color: #c3939b;
+}
+
+.link-register:hover {
+    color: #c3939b;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(195, 147, 155, 0.45);
+    border-color: rgba(195, 147, 155, 0.25);
+}
+
+
+
 
 
 /*************** START MEDIA QUERY ***************/
