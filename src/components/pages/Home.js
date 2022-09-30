@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Header from "../Header";
-import MainBanner from "../../assets/images/main-banner.jpg";
 
 const Home = () => {
 
@@ -10,10 +9,10 @@ const Home = () => {
             <div className="container-sections-home">
 
                 <h1>MI PRESUPUESTO</h1>
-                <img className="img-main-banner" src={MainBanner} alt="imagen de bienvenida"></img>
+                <img className="img-main-banner" src="/images/main-banner.jpg" alt="imagen de bienvenida"></img>
 
                 <div className="box-balance">
-                    <h4 className="text-balance">BALANCE  <i class="fas fa-chart-line"></i></h4>
+                    <h4 className="text-balance">BALANCE  <i className="fas fa-chart-line"></i></h4>
                     <div className="card-balance">$1460</div>
                 </div>
                 <div className="box-latest-records">

@@ -11,7 +11,7 @@ const Login = () => {
             <h6 className="subtitle-login">Iniciá sesión para comenzar:</h6>
 
             <form className="form-login" action="/records" method="POST">
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                     <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" required></input>
                     <label for="floatingInput">Email</label>
                 </div>
