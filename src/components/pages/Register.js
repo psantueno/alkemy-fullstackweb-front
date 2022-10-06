@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useFormRegister } from "../../hooks/useFormRegister";
 import Header from "../Header";
+import MessageBack from "../MessageBack";
 
 const initialForm = {
     name: "",
@@ -16,7 +17,7 @@ const Register = () => {
 
 
     const validationsForm = (form, e) => {
-        let errors = {};
+        // let errors = {};
         let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 
         // EVENTS //
@@ -30,6 +31,7 @@ const Register = () => {
                     errors.name = "El nombre de usuario debe tener al menos 3 caracteres.";
                     inputName.current.className = "form-control is-invalid";
                 } else {
+                    delete errors.name;
                     inputName.current.className = "form-control is-valid";
                 }
             }
@@ -42,6 +44,7 @@ const Register = () => {
                     errors.email = "Ingrese un correo electrónico válido";
                     inputEmail.current.className = "form-control is-invalid";
                 } else {
+                    delete errors.email;
                     inputEmail.current.className = "form-control is-valid";
                 }
             }
@@ -54,6 +57,7 @@ const Register = () => {
                     errors.password = "La contraseña debe tener al menos 8 caracteres.";
                     inputPass.current.className = "form-control is-invalid";
                 } else {
+                    delete errors.password;
                     inputPass.current.className = "form-control is-valid";
                 }
             }
@@ -61,7 +65,7 @@ const Register = () => {
         }
     }
 
-    const { form, errors, loading, response, handleChange, handleBlur, handleKeyUp, handleSubmit } = useFormRegister(initialForm, validationsForm);
+    const { form, errors, response, handleChange, handleBlur, handleKeyUp, handleSubmit } = useFormRegister(initialForm, validationsForm);
 
     return (
 
@@ -72,15 +76,15 @@ const Register = () => {
             <h1 className="title-register">Registro</h1>
             <h6 className="subtitle-register">Completá los campos para crear tu cuenta:</h6>
 
-            <form className="form-register" onSubmit={handleSubmit} action="/register" method="POST">
+            <form className="form-register" onSubmit={handleSubmit}>
                 <div className="form-floating mb-3">
-                    <input ref={inputName} value={form.name} onKeyUp={handleKeyUp} onChange={handleChange} onBlur={handleBlur} type="text" name="name" minLength="3" maxLength="12" className="form-control" id="floatingName" placeholder="Matute33" required></input>
+                    <input ref={inputName} value={form.name} onKeyUp={handleKeyUp} onChange={handleChange} onBlur={handleBlur} type="text" name="name"  minLength="3" maxLength="12" className="form-control" id="floatingName" placeholder="Matute33" required></input>
                     <label htmlFor="floatingName" className="">Nombre de usuario</label>
                     {errors.name && <span className="error-msg-name errors">{errors.name}</span>}
                 </div>
 
                 <div className="form-floating mb-3">
-                    <input ref={inputEmail} value={form.email} onKeyUp={handleKeyUp} onChange={handleChange} onBlur={handleBlur} type="email" name="email" className="form-control" id="floatingEmail" placeholder="name@example.com" required></input>
+                    <input ref={inputEmail} value={form.email} onKeyUp={handleKeyUp} onChange={handleChange} onBlur={handleBlur} type="text" name="email" className="form-control" id="floatingEmail" placeholder="name@example.com" required></input>
                     <label htmlFor="floatingEmail">Email</label>
                     {errors.email && <span className="error-msg-name errors">{errors.email}</span>}
                 </div>
@@ -96,6 +100,9 @@ const Register = () => {
                         <input className="btns-general" type="submit" value="Registrarme"></input>
                     </div>
                 </div>
+
+                {response && <MessageBack errors={response.errors} />}
+
             </form>
         </div>
 

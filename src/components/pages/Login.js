@@ -13,16 +13,16 @@ const Login = () => {
             <form className="form-login" action="/records" method="POST">
                 <div className="form-floating mb-3">
                     <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" required></input>
-                    <label for="floatingInput">Email</label>
+                    <label htmlFor="floatingInput">Email</label>
                 </div>
                 <div className="form-floating">
                     <input type="password" className="form-control" id="floatingPassword" placeholder="Password" required></input>
-                    <label for="floatingPassword">Contraseña</label>
+                    <label htmlFor="floatingPassword">Contraseña</label>
                 </div>
 
                 <div>
                     <label className="d-flex justify-content-center">
-                        <p className="text-link-register">¿No tenés cuenta? <Link className="link-register" to="/register">¡Regístrate!</Link></p>
+                        <p className="text-link-register">¿No tenés cuenta? <Link className="link-register" to="/users/register">¡Regístrate!</Link></p>
                     </label>
                 </div>
 

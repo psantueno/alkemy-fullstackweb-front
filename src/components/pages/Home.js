@@ -20,7 +20,7 @@ const Home = () => {
                         <h6>ÚLTIMOS REGISTROS:</h6>
                         <Link to="/records">
                             <button className="btn-add" name="add-button">
-                                <label for="add-button"><i className="fas fa-plus-square"></i> Nuevo registro</label></button>
+                                <label htmlFor="add-button"><i className="fas fa-plus-square"></i> Nuevo registro</label></button>
                         </Link>
                     </div>
                     <div className="box-table">
